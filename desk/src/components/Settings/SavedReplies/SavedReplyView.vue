@@ -88,9 +88,6 @@
         <div class="space-y-1.5">
           <div class="flex items-center justify-between">
             <FormLabel :label="__('Response')" required size="md" />
-            <DocumentationButton
-              url="https://docs.frappe.io/helpdesk/saved-replies"
-            />
           </div>
           <PreviewDialog v-model="previewDialog" />
           <CompactEditor
@@ -125,7 +122,6 @@
 <script setup lang="ts">
 import CompactEditor from "@/components/CompactEditor.vue";
 import ConfirmDialog from "@/components/ConfirmDialog.vue";
-import DocumentationButton from "@/components/DocumentationButton.vue";
 import { useAuthStore } from "@/stores/auth";
 import { useConfigStore } from "@/stores/config";
 import { __ } from "@/translation";

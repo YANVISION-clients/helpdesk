@@ -14,22 +14,14 @@
           </div>
           <!-- banner for setting up email account -->
           <div
+            v-if="deskEditUrl"
             class="flex items-center gap-2 rounded-md p-2 ring-1 ring-outline-elevation-2"
           >
             <CircleAlert
               class="h-6 w-5 w-min-5 w-max-5 min-h-5 max-w-5 text-ink-blue-5"
             />
             <div class="text-wrap text-xs text-ink-gray-7 flex flex-col gap-1">
-              <span>
-                {{ info.description }}
-                <a
-                  :href="info.link"
-                  target="_blank"
-                  class="text-ink-blue-5 underline"
-                  >here</a
-                >.
-              </span>
-              <span v-if="deskEditUrl" class="flex items-center gap-1">
+              <span class="flex items-center gap-1">
                 <a
                   :href="deskEditUrl"
                   target="_blank"
@@ -269,11 +261,6 @@ const getInitialCustomState = (): CustomEmailAccountState => ({
 });
 
 const customState = reactive<CustomEmailAccountState>(getInitialCustomState());
-
-const info = {
-  description: __("To know more about setting up email accounts, click"),
-  link: "https://docs.frappe.io/erpnext/user/manual/en/email-domain",
-};
 
 const deskEditUrl = computed(() => {
   const name = state.email_account_name || props.accountData.email_account_name;

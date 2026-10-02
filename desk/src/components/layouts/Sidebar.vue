@@ -21,17 +21,6 @@
           :isSidebarCollapsed="isCollapsed"
         />
       </div>
-      <SidebarItem
-        v-if="isOnboardingStepsCompleted && !isCustomerPortal"
-        :label="__('Help')"
-        :icon="HelpIcon"
-        :on-click="
-          () => {
-            showHelpModal = minimize ? true : !showHelpModal;
-            minimize = !showHelpModal;
-          }
-        "
-      />
     </template>
   </AppSidebar>
 
@@ -86,7 +75,6 @@ import {
   useOnboarding,
 } from "frappe-ui/frappe";
 
-import { HelpIcon } from "frappe-ui/icons";
 import { computed, h, markRaw, onMounted, ref } from "vue";
 import { useRouter } from "vue-router";
 import AppSidebar from "./AppSidebar.vue";
