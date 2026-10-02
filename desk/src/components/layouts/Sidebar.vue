@@ -152,16 +152,6 @@ const agentPortalDropdown = computed(() => [
     },
   },
   {
-    icon: "lucide-life-buoy",
-    label: __("Support"),
-    onClick: () => window.open("https://t.me/frappedesk"),
-  },
-  {
-    icon: "lucide-book-open",
-    label: __("Docs"),
-    onClick: () => window.open("https://docs.frappe.io/helpdesk"),
-  },
-  {
     label: __("Login to Frappe Cloud"),
     icon: FrappeCloudIcon,
     onClick: () => confirmLoginToFrappeCloud(),
